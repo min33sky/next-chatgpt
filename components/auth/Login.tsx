@@ -2,8 +2,10 @@
 
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
-import React from 'react';
 
+/**
+ * 로그인 컴포넌트
+ */
 export default function Login() {
   return (
     <div className="flex h-screen flex-col items-center justify-center bg-[#11A37F] text-center">

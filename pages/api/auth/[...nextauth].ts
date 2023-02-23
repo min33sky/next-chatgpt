@@ -1,6 +1,10 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
+/**
+ * NextAuth.js configuration options
+ * @see https://next-auth.js.org/configuration/options
+ */
 export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   providers: [
