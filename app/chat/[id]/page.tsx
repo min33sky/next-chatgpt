@@ -6,7 +6,6 @@ interface Props {
   params: {
     id: string;
   };
-  searchParams: Record<string, string>;
 }
 
 export default function ChatDetailPage({ params: { id } }: Props) {
