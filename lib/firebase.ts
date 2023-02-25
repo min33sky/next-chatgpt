@@ -9,7 +9,7 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTHDOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID, //? NEXT_PUBLIC_이 없을경우 undefined값이 들어가서 인스턴스 생성 안됨
   storageBucket: process.env.FIREBASE_STORAGEBUCKET,
   messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
   appId: process.env.FIREBASE_APPID,
