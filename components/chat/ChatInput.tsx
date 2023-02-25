@@ -7,6 +7,8 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
 import React, { useRef, useState } from 'react';
 import toast from 'react-hot-toast';
+import ModelSelection from '../common/ModelSelection';
+import useSWR from 'swr';
 
 interface Props {
   chatId: string;
@@ -20,8 +22,9 @@ export default function ChatInput({ chatId }: Props) {
   const { data: session } = useSession();
   const toastId = useRef<string>();
 
-  // TODO: useSWR to get model
-  const model = 'text-davinci-003';
+  const { data: model } = useSWR('model', {
+    fallbackData: 'text-davinci-003',
+  });
 
   /**
    * 메세지 전송 핸들러
@@ -102,6 +105,10 @@ export default function ChatInput({ chatId }: Props) {
           <PaperAirplaneIcon className="h-4 w-4 -rotate-45" />
         </button>
       </form>
+
+      <div className="md:hidden">
+        <ModelSelection />
+      </div>
     </div>
   );
 }
