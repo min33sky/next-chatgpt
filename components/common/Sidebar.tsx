@@ -19,7 +19,7 @@ export default function Sidebar() {
       ),
   );
 
-  console.log('chats: ', chats);
+  // console.log('chats: ', chats);
 
   return (
     <div className="flex h-screen flex-col p-2">

@@ -1,5 +1,19 @@
+import Chat from '@/components/chat/Chat';
+import ChatInput from '@/components/chat/ChatInput';
 import React from 'react';
 
-export default function ChatDetail() {
-  return <div>ChatDetail</div>;
+interface Props {
+  params: {
+    id: string;
+  };
+  searchParams: Record<string, string>;
+}
+
+export default function ChatDetailPage({ params: { id } }: Props) {
+  return (
+    <div className="flex h-screen flex-col overflow-hidden">
+      <Chat chatId={id} />
+      <ChatInput chatId={id} />
+    </div>
+  );
 }

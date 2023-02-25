@@ -1,4 +1,5 @@
 import Login from '@/components/auth/Login';
+import ClientProvider from '@/components/common/ClientProvider';
 import SessionProviderWrapper from '@/components/common/SessionProviderWrapper';
 import Sidebar from '@/components/common/Sidebar';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
@@ -30,8 +31,8 @@ export default async function RootLayout({
               <aside className="h-screen max-w-xs overflow-y-scroll bg-[#202123] md:min-w-[20rem]">
                 <Sidebar />
               </aside>
-              {/* ClientProvider - Notification */}
               <main className="flex-1 bg-[#343541]">{children}</main>
+              <ClientProvider />
             </div>
           )}
         </SessionProviderWrapper>
